@@ -1,0 +1,35 @@
+@import "../../app.component.scss";
+.outro {
+  text-align: center;
+  padding: 140px 5%;
+  div {
+    @include flex(column, center);
+    background-color: $darkViolet;
+    background-image: url(../../../assets/images/bg-pattern-how-we-work-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    gap: 30px 5%;
+    padding: 70px 5%;
+    h1 {
+      color: $veryLightGray;
+      line-height: 45px;
+    }
+    button {
+      @include button($veryLightGray, $veryDarkViolet);
+    }
+  }
+  @media (min-width: 768px) {
+    text-align: left;
+    padding: 140px 10%;
+    div {
+      @include flex(row, space-between);
+      background-image: url(/assets/images/bg-pattern-how-we-work-desktop.svg);
+      h1 {
+        max-width: 600px;
+      }
+      button {
+        white-space: nowrap;
+      }
+    }
+  }
+}

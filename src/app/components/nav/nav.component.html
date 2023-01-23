@@ -1,0 +1,14 @@
+<nav class="nav">
+  <div class="nav__logo">
+    <img src="assets/images/logo.svg" alt="insure-logo" />
+  </div>
+  <div [class.active]="isActive" class="nav__links">
+    <a>how we work</a>
+    <a>blog</a>
+    <a>account</a>
+    <button type="button">view plans</button>
+  </div>
+  <button class="nav__mobile" (click)="toggleMobileMenu()">
+    <img [src]="mobileMenuIcon" alt="mobile-menu-trigger" />
+  </button>
+</nav>

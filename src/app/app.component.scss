@@ -1,0 +1,25 @@
+//colors
+$darkViolet: hsl(256, 26%, 20%);
+$grayishBlue: hsl(216, 30%, 68%);
+$veryDarkViolet: hsl(270, 9%, 17%);
+$darkGrayishViolet: hsl(273, 4%, 51%);
+$veryLightGray: hsl(0, 0%, 98%);
+
+//mixins
+@mixin flex($direction, $justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin button($color, $hoverColor) {
+  color: $color;
+  border: 2px solid $color;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  &:hover {
+    color: $hoverColor;
+    background-color: $color;
+  }
+}

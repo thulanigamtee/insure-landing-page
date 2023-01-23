@@ -1,0 +1,59 @@
+@import "../../app.component.scss";
+.about {
+  text-align: center;
+  margin-top: 200px;
+  padding: 0 5%;
+  &::before {
+    content: url(/assets/images/bg-pattern-intro-right-mobile.svg);
+    position: absolute;
+    right: 0;
+    transform: translateY(-340px);
+  }
+  h1 {
+    color: $veryDarkViolet;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 1px;
+      background-color: $darkGrayishViolet;
+      // transform: translate(50%, -40px);
+      // right: 50%;
+      transform: translateY(-40px);
+    }
+  }
+  .about__info {
+    div {
+      margin-top: 80px;
+      h2 {
+        margin: 40px 0 10px 0;
+        color: $veryDarkViolet;
+      }
+      p {
+        color: $darkGrayishViolet;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    text-align: left;
+    padding: 0 10%;
+    margin-top: 200px;
+    @media (min-width: 1024px) {
+      margin-top: 300px;
+    }
+    &::before {
+      display: none;
+    }
+    h1 {
+      &::before {
+        transform: translate(0, -40px);
+        right: auto;
+      }
+    }
+    .about__info {
+      @include flex(row, space-between);
+      align-items: flex-start;
+      gap: 0 5%;
+    }
+  }
+}

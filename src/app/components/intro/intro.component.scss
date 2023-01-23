@@ -1,0 +1,85 @@
+@import "../../app.component.scss";
+.intro {
+  background-color: $darkViolet;
+  background-image: url(/assets/images/bg-pattern-intro-left-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: left top 450px;
+  padding-bottom: 80px;
+  @media (min-width: 400px) {
+    background-image: none;
+  }
+
+  .intro__image__mobile {
+    text-align: center;
+    img {
+      width: clamp(200px, 100%, 400px);
+      height: 451px;
+    }
+  }
+  .intro__image__desktop {
+    display: none;
+  }
+  .intro__info {
+    @include flex(column, flex-start);
+    text-align: center;
+    gap: 20px 0;
+    margin-top: 80px;
+    padding: 0 5%;
+    h1 {
+      color: $veryLightGray;
+    }
+    p {
+      color: $veryLightGray;
+      opacity: 75%;
+    }
+    button {
+      @include button($veryLightGray, $veryDarkViolet);
+      margin-top: 15px;
+    }
+  }
+  @media (min-width: 768px) {
+    @include flex(row-reverse, space-between);
+    padding: 0 10%;
+    height: 600px;
+    gap: 0 10px;
+    &::before {
+      content: url(/assets/images/bg-pattern-intro-right-desktop.svg);
+      position: absolute;
+      right: 0;
+      z-index: 1;
+    }
+    &::after {
+      content: url(/assets/images/bg-pattern-intro-left-desktop.svg);
+      position: absolute;
+      left: 0;
+      top: 510px;
+      z-index: 1;
+    }
+    .intro__image__mobile {
+      display: none;
+    }
+    .intro__image__desktop {
+      display: block;
+      transform: translateY(140px);
+      @media (max-width: 1024px) {
+        transform: translateY(0);
+      }
+      img {
+        width: clamp(300px, 40vw, 540px);
+      }
+    }
+    .intro__info {
+      text-align: left;
+      align-items: flex-start;
+      padding: 0;
+      &::before {
+        content: "";
+        width: 80px;
+        height: 2px;
+        background-color: $darkGrayishViolet;
+        position: absolute;
+        top: 194px;
+      }
+    }
+  }
+}
